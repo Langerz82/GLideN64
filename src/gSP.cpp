@@ -35,7 +35,7 @@ static bool g_ConkerUcode;
 void gSPFlushTriangles()
 {
 	if ((gSP.geometryMode & G_SHADING_SMOOTH) == 0) {
-		dwnd().getDrawer().drawTriangles();
+		dwnd().getDrawer().clearTriangles();
 		return;
 	}
 
@@ -45,7 +45,7 @@ void gSPFlushTriangles()
 		(RSP.nextCmd != G_TRIX) &&
 		(RSP.nextCmd != G_QUAD)
 		) {
-		dwnd().getDrawer().drawTriangles();
+		dwnd().getDrawer().clearTriangles();
 		DebugMsg(DEBUG_NORMAL, "Triangles flushed;\n");
 	}
 }

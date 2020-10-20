@@ -43,6 +43,8 @@ class GraphicsDrawer
 public:
 	void addTriangle(int _v0, int _v1, int _v2);
 
+	void clearTriangles();
+
 	void drawTriangles();
 
 	void drawScreenSpaceTriangle(u32 _numVtx, graphics::DrawModeParam _mode = graphics::drawmode::TRIANGLE_STRIP);

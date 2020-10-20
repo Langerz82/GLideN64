@@ -793,6 +793,15 @@ bool GraphicsDrawer::_canDraw() const
 	return config.frameBufferEmulation.enable == 0 || frameBufferList().getCurrent() != nullptr;
 }
 
+void GraphicsDrawer::clearTriangles()
+{
+	if (triangles.num == 0 || !_canDraw()) {
+		triangles.num = 0;
+		triangles.maxElement = 0;
+		return;
+	}
+}
+
 void GraphicsDrawer::drawTriangles()
 {
 	if (triangles.num == 0 || !_canDraw()) {
